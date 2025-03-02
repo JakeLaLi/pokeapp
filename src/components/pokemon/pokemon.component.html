@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Pokédex</h2>
+  
+    <!-- Add Pokemon -->
+    <div>
+      <input [(ngModel)]="newPokemonName" placeholder="Enter Pokémon name" />
+      <button (click)="addPokemon()">Add Pokémon</button>
+    </div>
+  
+    <!-- Pokémon List -->
+    <ul>
+      <li *ngFor="let pokemon of pokemonList; let i = index">
+        <span *ngIf="editingIndex !== i">{{ pokemon.name }}</span>
+  
+        <!-- Edit Mode -->
+        <input *ngIf="editingIndex === i" [(ngModel)]="editPokemonName" />
+  
+        <button *ngIf="editingIndex !== i" (click)="editPokemon(i)">Edit</button>
+        <button *ngIf="editingIndex === i" (click)="updatePokemon()">Save</button>
+        <button (click)="deletePokemon(i)">Delete</button>
+      </li>
+    </ul>
+  </div>
