@@ -1,0 +1,11 @@
+<div>
+    <h3>{{mode}}</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="pokemonForm">
+        <mat-form-field >
+            <input matInput placeholder="Enter Pokemon's Name" id="pokemonName" formControlName="pokemonName" name="pokemonName" >
+        </mat-form-field>    
+        <p>
+            <button type="submit" mat-raised-button color="primary">Submit</button>
+        </p>
+    </form>
+    </div>

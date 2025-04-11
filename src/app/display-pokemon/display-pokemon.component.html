@@ -1,0 +1,10 @@
+<div>
+    <ul *ngFor ="let pokemon of pokemons let i = index">
+        <li> 
+          {{pokemon._id}}: {{pokemon.pokemonName}} (index {{i}})
+          <button mat-button color="accent" [routerLink]="['/editPokemon', pokemon._id]">UPDATE</button>
+          <button mat-button color="warn" (click)="onDelete(pokemon._id)">DELETE</button>
+        </li>
+  
+    </ul>
+  </div>
